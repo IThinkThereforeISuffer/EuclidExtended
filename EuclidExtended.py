@@ -39,5 +39,10 @@ def diophantine(a, b, c):
     y = mat[1][1]
     x = -mat[0][1]
   return signe*x*p, signe*y*p
+def modularInverse(a, b, n):
+  d,re = gcd(a, n)
+  assert n > 1 and a > 0 and (d == 1)
+  t,s = diophantine(n,a,1)
+  x = b*(s % n) % n
+  return x
 
-print(diophantine(3,6,18))
