@@ -46,3 +46,9 @@ def modularInverse(a, b, n):
   x = b*(s % n) % n
   return x
 
+def ChineseRemainderTheorem(n1, r1, n2, r2):
+  (x, y) = ExtendedEuclid(n1, n2)
+
+  n = (r2*x*n1  + r1*y*n2) % (n1*n2) 
+  return  n
+
